@@ -27,7 +27,7 @@ public class Main {
             PaymentFactory pFactory = new PaymentFactory();
             iPaymentType = pFactory.create(paymentType);
             paymentProcessor = new PaymentProcessor(iPaymentType);
-            String totalAmount = iPaymentType.pay(amount);
+            String totalAmount = paymentProcessor.processPayment(amount);
             System.out.println(totalAmount);
 
         }
